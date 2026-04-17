@@ -41,6 +41,10 @@ main {
     margin: 0 auto;
 }
 
+#announcement h2 {
+    font-family: SignPainter;
+}
+
 #stats {
     display: flex;
     flex-direction: row;
