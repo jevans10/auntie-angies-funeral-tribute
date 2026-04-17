@@ -6,7 +6,7 @@
 @font-face {
     font-family: 'CormorantGaramond';
     src: url(/fonts/CormorantGaramond-VariableFont_wght.ttf) format("truetype");
-}
+}   
 
 :root {
     --purple: rgba(66,2,143,.25);
@@ -14,58 +14,60 @@
 }
 
 body {
-    font-family: CormorantGaramond, serif;
-    margin: 0;
-    padding: 0;
-}
-
-#heading {
-    text-align: center;
     background-color: var(--dark-purple);
+    text-align: center;
+    margin: auto;
+    font-family: 'CormorantGaramond', sans-serif;
     color: white;
-    padding: 1vh 1vw;
-    top: 0;
 }
 
-#heading h1 {
+h1 {
     font-family: 'SignPainter', cursive;
     font-size: 2em;
 }
 
-hr {
-    width: 2px; 
-    border: none; 
-    background-color: var(--dark-purple); 
-    margin: auto 0.5em;
-    height: 15vw;
+figure img {
+    border-radius: 10px;
+    margin: auto;
 }
 
-img {
-    border-radius: 10px;
+main {
+    margin: 0 auto;
 }
 
 #stats {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
-    width: 100vw;
     margin: 0 auto;
     text-align: center;
-    background-color: var(--purple);
+    gap: 3vw;
+    height: 15vh;
 }
 
-.vr {
-    height: 2px; 
+#stats p {
+    margin: 0;
+}
+
+.verticalLine {
+    width: 2px; 
     border: none; 
-    background-color: var(--dark-purple); 
-    margin: auto;
+    background-color: white; 
+    margin: auto 0.5em;
+    height: 5vh;
+}
+
+hr {
     width: 75vw;
+    margin: 2em auto;
+    border: none;
+    border-top: 1px solid white;
 }
 
 #poem {
+    font-size: 1.25em;
     width: 75vw;
     margin: 2em auto;
-    font-size: 1em;
-    line-height: 1.75em;
 }
+
+
