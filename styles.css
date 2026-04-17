@@ -24,8 +24,9 @@ body {
 h1 {
     font-family: 'SignPainter', cursive;
     font-size: 3em;
+    margin-top: 5vh;
     margin-bottom: 0;
-}
+    }
 
 h4 {
     font-size:1.75em;
