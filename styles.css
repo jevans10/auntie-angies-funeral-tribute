@@ -41,6 +41,10 @@ main {
     margin: 0 auto;
 }
 
+#annoucement {
+    max-width: 75vw;
+}
+
 #annoucement h3 {
     font-family: 'SignPainter', cursive;
     font-size: 2.25em;
