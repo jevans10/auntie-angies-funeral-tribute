@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'SignPainter';
+    src: url(/fonts/SignPainter.ttc) format("truetype");
+}
+
+@font-face {
+    font-family: 'CormorantGaramond';
+    src: url(/fonts/CormorantGaramond-VariableFont_wght.ttf) format("truetype");
+}
+
+:root {
+    --purple: rgba(66,2,143,.25);
+    --dark-purple: rgba(26,10,46,1);
+}
+
+body {
+    font-family: CormorantGaramond, serif;
+}
+
+#heading {
+    text-align: center;
+    margin-top: 1em;
+    background-color: var(--dark-purple);
+    color: white;
+    padding: 1vh 1vw;
+    top: 0;
+}
+
+#sidebars {
+    display: flex;
+    flex-direction: row;
+}
+
+#right-sidebar {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#right-sidebar img {
+    width: 30vw;   
+}
+
+#right-sidebar  h1 {
+    font-family: 'SignPainter', cursive;
+    font-size: 1.5em;
+    color: var(--dark-purple);
+}
+
+#left-sidebar p {
+    font-family: 'CormorantGaramond', serif;
+    font-size: 1.25em;
+}
+
+hr {
+    height: 2px; 
+    border: none; 
+    background-color: var(--dark-purple); 
+    margin: 0.5em auto;
+    width: 15vw;
+}
