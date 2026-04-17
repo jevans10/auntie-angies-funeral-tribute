@@ -51,10 +51,6 @@ main {
     height: 15vh;
 }
 
-h2 {
-    color: var(--purple);
-}
-
 #stats p {
     margin: 0;
 }
