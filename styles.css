@@ -46,6 +46,10 @@ main {
     font-size:2em;
 }
 
+#annoucement h4 {
+    font-size: 2.5em;
+}
+
 #stats {
     display: flex;
     flex-direction: row;
