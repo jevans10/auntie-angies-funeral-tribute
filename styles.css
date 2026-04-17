@@ -50,6 +50,7 @@ main {
     text-align: center;
     gap: 3vw;
     height: 15vh;
+    width: 80vw;
 }
 
 #stats p {
