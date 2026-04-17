@@ -26,6 +26,10 @@ h1 {
     font-size: 3em;
 }
 
+h4 {
+    font-size:1.75em
+}
+
 figure img {
     border-radius: 10px;
     margin: auto;
