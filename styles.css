@@ -10,7 +10,7 @@
 
 :root {
     --purple: rgba(66,2,143,.25);
-    --dark-purple: rgba(26,10,46,1);
+    --dark-purple: rgba(26,10,46,.75);
 }
 
 body {
@@ -79,7 +79,7 @@ main {
 }
 
 hr {
-    width: 75vw;
+    width: 50vw;
     margin: 2em auto;
     border: none;
     border-top: 1px solid white;
