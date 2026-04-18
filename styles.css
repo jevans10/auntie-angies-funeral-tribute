@@ -39,7 +39,7 @@ body {
     text-align: center;
     font-family: 'CormorantGaramond', sans-serif;
     color: white;
-    margin-top: 7.5vh;
+    margin-top: 2.5vh;
     position: relative;
 }
 
@@ -48,8 +48,6 @@ h1 {
     font-size: 3em;
     margin-bottom: 0;
     display: inline;
-    
-
     }
 
 h4 {
