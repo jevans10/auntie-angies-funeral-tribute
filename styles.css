@@ -9,8 +9,8 @@
 }   
 
 @font-face {
-    font-family: 'StillTime';
-    src: url(/fonts/Still\ Time.otf) format("opentype");
+    font-family: 'Allura';
+    src: url(/fonts/Allura-Regular.ttf) format("truetype");
 }
 
 :root {
@@ -21,11 +21,15 @@
     --their-purple: rgb(140,0,176);
     --yellow: rgb(254, 212, 99);
 }
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
 
 body {
     background-color: var(--their-purple);
     text-align: center;
-    margin: auto;
     font-family: 'CormorantGaramond', sans-serif;
     color: white;
     margin-top: 7.5vh;
@@ -46,9 +50,36 @@ h4 {
 }
 
 img {
-    margin: auto;
+    width: 100%;
+    display: block;
+    -webkit-mask-image: radial-gradient(
+        circle,
+        black 40%,
+        transparent 100%
+    );
+
+    mask-image: radial-gradient(
+        circle,
+        black 40%,
+        transparent 100%
+    );
+}
+
+figure {
+    width: min(80vw, 100%);
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
     border-radius: 5px;
-    width: 80vw;
+    
+}
+
+figure::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 80px var(--their-purple);
+    pointer-events: none;
 }
 
 main {
@@ -76,15 +107,19 @@ main {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 5vh auto;
+    margin: 2.5vh auto;
     text-align: center;
     gap: 3vw;
     height: 15vh;
     max-width: 80vw;
-    padding: 2.5vh 2.5vw;
+    padding: 0;
 }
 
 #stats p {
+    margin: 0;
+}
+
+#stats h2 {
     margin: 0;
 }
 
