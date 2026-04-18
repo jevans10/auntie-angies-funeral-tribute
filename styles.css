@@ -9,8 +9,10 @@
 }   
 
 :root {
-    --purple: rgba(66,2,143,.25);
-    --dark-purple: rgba(26,10,46,.75);
+    /* --purple: rgba(66,2,143,.25); */
+    /* --dark-purple: rgba(26,10,46,.75); */
+    --purple: rgba(80, 54, 109, 1);
+    --dark-purple: rgba(83,71,98, 1);
 }
 
 body {
@@ -46,7 +48,6 @@ main {
     display: flex;
     flex-direction: column;
     margin: auto;
-    max-width: 75vw;
 }
 
 #annoucement h3 {
@@ -87,8 +88,16 @@ hr {
 
 #poem {
     font-size: 1.25em;
-    width: 75vw;
     margin: 2em auto;
 }
 
-
+#annoucement, #poem {
+    background-image: linear-gradient(
+        var(--dark-purple) 0%,
+        var(--purple) 28%,
+        var(--purple) 72%,
+        var(--dark-purple) 100%
+    );   
+    padding: 10vh 0;
+    margin: 0 auto;
+}
