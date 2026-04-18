@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Memorial Events//EN
+
+BEGIN:VEVENT
+UID:mass-20260425@example.com
+DTSTAMP:20260417T000000Z
+SUMMARY:Angela Johnson's Mass
+DESCRIPTION:Mass service at St. Phillip Neri Catholic Church.
+LOCATION:St. Phillip Neri Catholic Church, 10960 Martin Luther King Blvd, Houston, TX 77048
+DTSTART:20260425T100000
+DTEND:20260425T110000
+END:VEVENT
+
+BEGIN:VEVENT
+UID:repast-20260425@example.com
+DTSTAMP:20260417T000000Z
+SUMMARY:Repast
+DESCRIPTION:Angela Johnson's Repast following Mass.
+LOCATION:St. Phillip Neri Catholic Church, 10960 Martin Luther King Blvd, Houston, TX 77048
+DTSTART:20260425T110000
+DTEND:20260425T140000
+END:VEVENT
+
+END:VCALENDAR

@@ -8,36 +8,46 @@
     src: url(/fonts/CormorantGaramond-VariableFont_wght.ttf) format("truetype");
 }   
 
+@font-face {
+    font-family: 'StillTime';
+    src: url(/fonts/Still\ Time.otf) format("opentype");
+}
+
 :root {
     /* --purple: rgba(66,2,143,.25); */
     /* --dark-purple: rgba(26,10,46,.75); */
-    --purple: rgba(80, 54, 109, 1);
-    --dark-purple: rgba(83,71,98, 1);
+    --dark-purple: rgba(80, 54, 109, 1);
+    /* --dark-purple: rgba(83,71,98, 1); */
+    --their-purple: rgb(140,0,176);
 }
 
 body {
-    background-color: var(--dark-purple);
+    background-color: var(--their-purple);
     text-align: center;
     margin: auto;
     font-family: 'CormorantGaramond', sans-serif;
     color: white;
+    margin-top: 7.5vh;
+
 }
 
 h1 {
     font-family: 'SignPainter', cursive;
     font-size: 3em;
-    margin-top: 5vh;
     margin-bottom: 0;
+    display: inline;
+    
+
     }
 
 h4 {
-    font-size:1.75em;
     margin-top: 0;
 }
 
 img {
     margin: auto;
     border-radius: 5px;
+    width: 80vw;
 }
 
 main {
@@ -95,4 +105,8 @@ hr {
 #poem {
     font-size: 1.25em;
     margin: 2em auto;
+}
+
+a {
+    color: inherit;
 }
