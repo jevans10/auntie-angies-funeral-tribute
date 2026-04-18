@@ -27,13 +27,18 @@ html, body {
     overflow-x: hidden;
 }
 
+main, figure, #annoucement, #stats, #poem {
+    position: relative;
+    z-index: 1;
+}
+
 body {
     background-color: var(--their-purple);
     text-align: center;
     font-family: 'CormorantGaramond', sans-serif;
     color: white;
     margin-top: 7.5vh;
-
+    position: relative;
 }
 
 h1 {
