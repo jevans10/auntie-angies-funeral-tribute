@@ -6,11 +6,13 @@
 @font-face {
     font-family: 'CormorantGaramond';
     src: url(/fonts/CormorantGaramond-VariableFont_wght.ttf) format("truetype");
+    font-display: swap;
 }   
 
 @font-face {
     font-family: 'Allura';
     src: url(/fonts/Allura-Regular.ttf) format("truetype");
+    font-display: swap;
 }
 
 :root {
