@@ -99,12 +99,13 @@ main {
 
 #annoucement h4, #annoucement h3 {
     width: 80vw;
-    margin: auto
+    margin: auto;
 }
 
-#annoucement h3 {
+h3 {
     font-family: 'SignPainter', cursive;
     font-size: 2.25em;
+    color: var(--yellow);   
 }
 
 #stats {
@@ -150,4 +151,17 @@ hr {
 
 a {
     color: inherit;
+}
+
+#tribute-message p{
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
+    justify-content: center;
+}
+
+#obituary {
+    font-size: 1.25em;
+    margin: auto auto 2em auto;
+    width: min(80vw, 100%);
 }
