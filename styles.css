@@ -151,3 +151,7 @@ hr {
 a {
     color: inherit;
 }
+
+.pa-carousel-widget [style*="linear-gradient"] {
+  background: none !important;
+}
