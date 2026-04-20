@@ -151,6 +151,7 @@ hr {
 a {
     color: inherit;
 }
-.jx-carousel-controls [style*="linear-gradient"] {
+.jx-gallery .jx-carousel-controls > div:first-child,
+.jx-carousel .jx-carousel-controls > div:first-child {
   background: none !important;
 }
