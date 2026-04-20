@@ -151,7 +151,6 @@ hr {
 a {
     color: inherit;
 }
-
-.pa-carousel-widget [style*="linear-gradient"] {
+.jx-carousel-controls [style*="linear-gradient"] {
   background: none !important;
 }
