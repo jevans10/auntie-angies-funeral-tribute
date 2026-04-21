@@ -185,7 +185,8 @@
                 </div>
             <button id="nextBtn" aria-label="Next slide">›</button>
         </div>
-        <hr>
+        
+        <hr style="margin-bottom: 0">
         
         <div id="form">
             <script type="text/javascript" src="https://form.jotform.com/jsform/261065974212052"></script>
@@ -289,5 +290,21 @@ if (prevBtn && nextBtn) {
 loadSlides();
 
 });
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, {
+  threshold: 0.15
+});
+
+document.querySelectorAll("#obituary, #poem, #stats, #annoucement, #form")
+  .forEach(el => {
+    el.classList.add("reveal");
+    observer.observe(el);
+  });
 </script>
 </html>

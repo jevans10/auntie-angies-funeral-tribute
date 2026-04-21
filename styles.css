@@ -46,6 +46,12 @@ body {
     position: relative;
 }
 
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 6vh 20px;
+}
+
 h1 {
     font-family: 'SignPainter', cursive;
     font-size: 3em;
@@ -141,11 +147,25 @@ h3 {
     height: 5vh;
 }
 
-hr {
+/* hr {
     width: 50vw;
     margin: auto;
     border: none;
     border-top: 1px solid white;
+} */
+
+hr {
+  border: none;
+  height: 5px;
+  margin: 10vh auto;
+  width: 80%;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.2),
+    transparent
+  );
 }
 
 #poem {
@@ -166,7 +186,7 @@ a {
 
 #obituary {
     font-size: 1.25em;
-    margin: auto auto 2em auto;
+    margin: 2em auto;
     width: min(80vw, 100%);
 }
 
@@ -267,3 +287,25 @@ a {
     font-size: 18px;
   }
 }
+
+#obituary, #poem, #slideshow, #stats {
+  background: rgba(255,255,255,0.03);
+  padding: 60px 20px;
+  border-radius: 12px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal:nth-child(1) { transition-delay: 0s; }
+.reveal:nth-child(2) { transition-delay: 0.1s; }
+.reveal:nth-child(3) { transition-delay: 0.2s; }
