@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'SignPainter';
-    src: url(/fonts/SignPainter.woff2) format("truetype");
+    src: url('/fonts/SignPainter.woff2') format('woff2');
+    font-display: swap;
 }
 
 @font-face {
