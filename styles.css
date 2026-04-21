@@ -46,9 +46,9 @@ body {
 h1 {
     font-family: 'SignPainter', cursive;
     font-size: 3em;
-    margin-bottom: 0;
     display: inline;
-    }
+    line-height: 1.25;
+}
 
 h4 {
     margin-top: 0;
