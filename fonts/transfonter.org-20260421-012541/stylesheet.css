@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'SignPainter-HouseScript';
+    src: url('SignPainter-HouseScript.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SignPainter';
+    src: url('SignPainter-HouseScript_1.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
