@@ -141,7 +141,7 @@
                 <br><br>
                 She is lovingly remembered by her nieces and nephews, Orlando Harris Jr., April Johnson, Arlyssa Harris, 
                 De Angelo Johnson, William Alexander, Brandon Alexander, Ludwig Johnson Jr., Gabriel Evans, Grace Evans, 
-                and Josephine Evans and by her cherished godchildren: Khourtini Fear, Khourtland Fears, Khamille Fears, 
+                and Josephine Evans and by her cherished godchildren: Khourtini Fears, Khourtland Fears, Khamille Fears, 
                 Narkisse Kelly, and Leonard Ashford III. She held a very special place in her heart for Harold “Harry” 
                 Joseph Johnson. 
                 <br><br>
@@ -170,6 +170,21 @@
                 <i>Immortality by Clare Harner</i>
             </p>
         </div>
+
+        <hr>
+
+        <h3>tributes</h3>
+        <div id="slideshow" style="margin: 4vh auto;">
+            <button id="prevBtn" aria-label="Previous slide">‹</button>
+                <div id="memorial-slideshow">
+                    <div class="overlay"></div>
+                    <div class="card">
+                        <div class="name" id="name"></div>
+                        <div class="anecdote" id="anecdote"></div>
+                    </div>
+                </div>
+            <button id="nextBtn" aria-label="Next slide">›</button>
+        </div>
         <hr>
         
         <div id="form">
@@ -178,4 +193,101 @@
 
     </main>
 </body>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTxrdrxDML8pdzSGVAyce820RNHOj2kCnmACs1BZ6-BVUXx3M8dbxpQPsJOlJtX2c_pXAxdo_BoijZL/pub?gid=1675869924&single=true&output=csv";
+
+let slides = [];
+let index = 0;
+
+async function loadSlides() {
+  const res = await fetch(SHEET_URL);
+  const csv = await res.text();
+
+  const rows = csv.trim().split("\n").slice(1);
+
+  slides = rows.map(row => {
+    const cols = row.split(",");
+
+    return {
+      first: cols[0] || "",
+      last: cols[1] || "",
+      photo: cols[2] || "",
+      anecdote: cols[3] || "",
+      id: cols[4] || ""
+    };
+  });
+
+  renderSlide();
+  setInterval(nextSlide, 7000);
+}
+
+function renderSlide() {
+  if (!slides.length) return;
+
+  const slide = slides[index];
+  const card = document.querySelector(".card");
+
+  if (!card) return;
+
+  card.classList.add("fade-out");
+
+  setTimeout(() => {
+
+    // SAFE NAME
+    const name = `${slide.first} ${slide.last}`.trim();
+    const nameEl = document.getElementById("name");
+    if (nameEl) nameEl.innerText = name;
+
+    // ANECDOTE
+    const anecdoteEl = document.getElementById("anecdote");
+    if (anecdoteEl) anecdoteEl.innerText = slide.anecdote;
+
+    // ID (optional — only if element exists)
+    const idEl = document.getElementById("id");
+    if (idEl) idEl.innerText = slide.id ? `Memory ID: ${slide.id}` : "";
+
+    // PHOTO (SAFE CHECK)
+    const img = document.getElementById("photo");
+    if (img) {
+      if (slide.photo) {
+        img.src = slide.photo;
+        img.style.display = "block";
+      } else {
+        img.style.display = "none";
+      }
+    }
+
+    card.classList.remove("fade-out");
+    card.classList.add("fade-in");
+
+  }, 300);
+}
+
+function nextSlide() {
+  index = (index + 1) % slides.length;
+  renderSlide();
+}
+
+function prevSlide() {
+  index = (index - 1 + slides.length) % slides.length;
+  renderSlide();
+}
+
+/* ✅ BUTTONS (this is the real fix) */
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+if (prevBtn && nextBtn) {
+  prevBtn.onclick = prevSlide;
+  nextBtn.onclick = nextSlide;
+} else {
+  console.error("Buttons not found");
+}
+
+loadSlides();
+
+});
+</script>
 </html>

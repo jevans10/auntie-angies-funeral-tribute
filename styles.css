@@ -186,3 +186,84 @@ a {
 .pa-carousel-widget object:first-child {
     opacity: 1;
 }
+
+#slideshow {
+    position: relative; /* 🔥 REQUIRED for absolute buttons */
+
+    display: flex;
+    flex-direction: row;
+
+    min-width:(80vw, 100%);
+    margin: auto;
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    padding: 0 70px; /* space for left + right arrows */
+    box-sizing: border-box;
+    font-size: 20px
+    ;
+}
+
+#prevBtn,
+#nextBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+  color: white;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+
+  opacity: 0.5;
+  transition: all 0.25s ease;
+
+  z-index: 10;
+}
+
+/* left button */
+#prevBtn {
+  left: 20px;
+}
+
+/* right button */
+#nextBtn {
+  right: 20px;
+}
+
+/* hover state */
+#prevBtn:hover,
+#nextBtn:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* active press */
+#prevBtn:active,
+#nextBtn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* mobile tweak */
+@media (max-width: 768px) {
+  #prevBtn, #nextBtn {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+}
