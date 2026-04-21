@@ -165,3 +165,20 @@ a {
     margin: auto auto 2em auto;
     width: min(80vw, 100%);
 }
+
+.pa-carousel-widget {
+    position: relative;
+    overflow: hidden;
+}
+
+.pa-carousel-widget object {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.pa-carousel-widget object:first-child {
+    opacity: 1;
+}
