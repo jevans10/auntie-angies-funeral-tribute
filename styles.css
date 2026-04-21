@@ -1,15 +1,17 @@
 @font-face {
     font-family: 'SignPainter';
-    src: url('https://github.com/jevans10/public-stuff/blob/eba2dc638727f2d998d95e6e14fceb52361f9cdf/signpainter_housescript_02.ttf') format("truetype");
-    font-display: swap;
+    src: url(/fonts/SignPainter.ttc) format("truetype");
 }
 
 @font-face {
-    font-family: 'CormorantGaramond';
+    font-family: 'CormorantGaramond-';
     src: url(/fonts/CormorantGaramond-VariableFont_wght.ttf) format("truetype");
     font-display: swap;
 }   
-
+ @font-face {
+    font-family: 'jost';
+    src: url(/fonts/Jost-VariableFont_wght.ttf) format("truetype");
+ }
 @font-face {
     font-family: 'Allura';
     src: url(/fonts/Allura-Regular.ttf) format("truetype");
@@ -38,7 +40,7 @@ main, figure, #annoucement, #stats, #poem {
 body {
     background-color: var(--their-purple);
     text-align: center;
-    font-family: 'CormorantGaramond', sans-serif;
+    font-family: 'jost', sans-serif;
     color: white;
     margin-top: 2.5vh;
     position: relative;
@@ -101,6 +103,7 @@ main {
 #annoucement h4, #annoucement h3 {
     width: 80vw;
     margin: auto;
+    font-weight: normal;
 }
 
 h3 {
