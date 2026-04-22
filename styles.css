@@ -107,7 +107,6 @@ main {
 }
 
 #annoucement h4, #annoucement h3 {
-    width: 80vw;
     margin: auto;
     font-weight: normal;
 }
@@ -208,22 +207,16 @@ a {
 }
 
 #slideshow {
-    position: relative; /* 🔥 REQUIRED for absolute buttons */
-
-    display: flex;
-    flex-direction: row;
-
-    min-width:(80vw, 100%);
-    margin: auto;
-
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    padding: 0 70px; /* space for left + right arrows */
-    box-sizing: border-box;
-    font-size: 20px
-    ;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
 }
 
 #prevBtn,
