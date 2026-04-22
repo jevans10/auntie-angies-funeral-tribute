@@ -183,8 +183,10 @@
                 <div id="memorial-slideshow">
                     <div class="overlay"></div>
                     <div class="card">
-                        <div class="name" id="name"></div>
-                        <div class="anecdote" id="anecdote"></div>
+                        <div class="1-card">
+                          <p>Rest in peace baby sister,  you will always be in my heart.</p>
+                          <i>Ben Johnson</i>
+                        </div>
                     </div>
                 </div>
             <button id="nextBtn" aria-label="Next slide">›</button>
@@ -193,7 +195,7 @@
         <hr style="margin-bottom: 0">
         
         <div id="form">
-            <script type="text/javascript" src="https://form.jotform.com/jsform/261065974212052"></script>
+            <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
         </div>    
 
     </main>
@@ -215,13 +217,13 @@ async function loadSlides() {
   slides = rows.map(row => {
     const cols = row.split(",");
 
-    return {
-      first: cols[0] || "",
-      last: cols[1] || "",
-      photo: cols[2] || "",
-      anecdote: cols[3] || "",
-      id: cols[4] || ""
-    };
+return {
+  first: cols[0] || "",
+  last: cols[1] || "",
+  photo: cols[2] || "",
+  anecdote: cols[3] || "",
+  id: cols[4] || ""
+};
   });
 
   renderSlide();
