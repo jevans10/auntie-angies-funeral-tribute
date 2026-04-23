@@ -189,6 +189,10 @@ a {
     width: min(80vw, 100%);
 }
 
+#obituary p {
+    padding: 0 5vw;
+}
+
 .pa-carousel-widget {
     position: relative;
     overflow: hidden;
