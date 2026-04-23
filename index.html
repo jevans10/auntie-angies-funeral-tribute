@@ -276,9 +276,10 @@
             <i>Yolanda</i>
 
         </div>
+        <button id="nextBtn">›</button>
+
     </div>
 
-        <button id="nextBtn">›</button>
     </div>
 
     <hr>
@@ -294,60 +295,39 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-    const SHEET_URL =
-        "https://docs.google.com/spreadsheets/d/e/2PACX-1vTxrdrxDML8pdzSGVAyce820RNHOj2kCnmACs1BZ6-BVUXx3M8dbxpQPsJOlJtX2c_pXAxdo_BoijZL/pub?gid=1675869924&single=true&output=csv";
-
-    let slides = [];
-
-    async function loadSlides() {
-        try {
-            const res = await fetch(SHEET_URL);
-            const csv = await res.text();
-
-            const rows = csv.trim().split("\n").slice(1);
-
-            slides = rows.map(row => {
-                const cols = row.split(",");
-                return {
-                    first: cols[0] || "",
-                    last: cols[1] || "",
-                    photo: cols[2] || "",
-                    anecdote: cols[3] || "",
-                    id: cols[4] || ""
-                };
-            });
-
-            console.log("Slides loaded:", slides.length);
-
-        } catch (err) {
-            console.error("Failed to load slides:", err);
-        }
-    }
-
-    loadSlides();
-
     const container = document.getElementById("memorial-slideshow");
     const prevBtn = document.getElementById("prevBtn");
     const nextBtn = document.getElementById("nextBtn");
 
     if (container && prevBtn && nextBtn) {
         let currentIndex = 0;
+        let autoPlay;
 
         function goToSlide(index) {
             const cards = container.querySelectorAll(".card");
             if (!cards.length) return;
-
-            // Wrap around
             currentIndex = (index + cards.length) % cards.length;
-
             container.scrollTo({
                 left: currentIndex * container.offsetWidth,
                 behavior: "smooth"
             });
         }
 
-        nextBtn.addEventListener("click", () => goToSlide(currentIndex + 1));
-        prevBtn.addEventListener("click", () => goToSlide(currentIndex - 1));
+        function startAutoPlay() {
+            autoPlay = setInterval(() => goToSlide(currentIndex + 1), 10000);
+        }
+
+        function stopAutoPlay() {
+            clearInterval(autoPlay);
+        }
+
+        nextBtn.addEventListener("click", () => { stopAutoPlay(); goToSlide(currentIndex + 1); startAutoPlay(); });
+        prevBtn.addEventListener("click", () => { stopAutoPlay(); goToSlide(currentIndex - 1); startAutoPlay(); });
+
+        container.addEventListener("mouseenter", stopAutoPlay);
+        container.addEventListener("mouseleave", startAutoPlay);
+
+        startAutoPlay();
     }
 
     // Scroll reveal
