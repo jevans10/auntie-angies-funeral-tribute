@@ -4,3 +4,10 @@
 .DS_Store
 .DS_Store
 Auntie Angie's Celebration of Life/Try 2.af~lock~
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
